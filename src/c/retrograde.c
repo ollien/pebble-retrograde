@@ -1,8 +1,6 @@
 #include "gcolor_definitions.h"
 #include <pebble.h>
 
-#define DEBUG
-
 static Window *s_window;
 static Layer *s_time_layer;
 
@@ -360,7 +358,6 @@ static void prv_init(void) {
   tick_timer_service_subscribe(SECOND_UNIT, prv_tick_handler);
   layer_set_update_proc(s_time_layer, prv_draw_time_layer);
   layer_add_child(window_layer, s_time_layer);
-  ;
 
   window_stack_push(s_window, false);
 }
